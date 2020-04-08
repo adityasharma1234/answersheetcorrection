@@ -5,7 +5,7 @@ Project is basically to check the answersheet automatically. Automation of the g
 We will work with natural language processing. We have used the Natural Language Toolkit (NLTK) and textmining for most NLP tasks. Other libraries: numpy, scipy, xlrd, xlwt, word2vec etc. have been used for various tasks.
 
 ### Prerequisites
-NLTk library
+NLTk library //
 word2vec
 
 
