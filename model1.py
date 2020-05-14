@@ -36,7 +36,6 @@ for traincv, testcv in cv.split(X):
     num_workers = 4
     context = 10
     downsampling = 1e-3
-       print("Training Word2Vec Model...")
     model = Word2Vec(sentences, workers=num_workers, size=num_features, min_count = min_word_count, window = context, sample = downsampling)
     model.init_sims(replace=True)
     model.wv.save_word2vec_format('word2vecmodel.bin', binary=True)
