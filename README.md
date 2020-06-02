@@ -6,6 +6,7 @@ We will work with natural language processing. We have used the Natural Language
 
 ### Prerequisites
 NLTk library  , word2vec
-
+#### References
+ https://arxiv.org/pdf/1606.04289.pdf
 
 
