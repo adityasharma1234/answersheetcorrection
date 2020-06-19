@@ -9,8 +9,8 @@ from sklearn.metrics import cohen_kappa_score
 def get_model():
 
     model = Sequential()
-    model.add(GRU(200, dropout=0.6, recurrent_dropout=0.5, input_shape=[1, 200], return_sequences=True))
-    model.add(GRU(64, recurrent_dropout=0.5))
+    model.add(GRU(200, dropout=0.6, recurrent_dropout=0.6, input_shape=[1, 200], return_sequences=True))
+    model.add(GRU(64, recurrent_dropout=0.6))
     model.add(Dropout(0.6))
     model.add(Dense(1, activation='relu'))
 
@@ -19,7 +19,7 @@ def get_model():
     return model
 
 
-cv = KFold(n_splits=3, shuffle=True)
+cv = KFold(n_splits=5, shuffle=True)
 results = []
 predictionlist = []
 
@@ -42,7 +42,7 @@ for traincv, testcv in cv.split(X):
     downsampling = 1e-3
     model =Word2Vec(s, workers=numberofworker, size=numberoffeaturess, min_count = minimumword, window = contet, sample = downsampling)
     model.init_sims(replace=True)
-    model.wv.save_word2vec_format('word2vecmodel.bin', binary=True)
+    model.wv.save_word2vec_format("model1.bin", binary =True )
     c_train = []
     for es in train:
         c_train.append(toword(es, remove_stopwords=True))
@@ -58,7 +58,7 @@ for traincv, testcv in cv.split(X):
     testvector = np.reshape(testvector, (testvector.shape[0], 1, testvector.shape[1]))
 
     model1 = get_model()
-    model1.fit(trainvector, y_train, batch_size=64, epochs=10)
+    model1.fit(trainvector, y_train, batch_size=64, epochs=15)
     yprediction = model1.predict(testvector)
     if count == 5:
          model1.save('model_gru.h5')
