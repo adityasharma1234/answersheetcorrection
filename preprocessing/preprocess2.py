@@ -64,9 +64,9 @@ def make_feature(w, model, numberoffeaturess):
     return f_vector
 
 def AverageFeature(essays, model, num_features):
-    counter = 0
+  
     essayFeatureVecs = np.zeros((len(essays),num_features),dtype="float32")
     for essay in essays:
-        essayFeatureVecs[counter] = make_feature(essay, model, num_features)
-        counter = counter + 1
+        essayFeatureVecs[] = make_feature(essay, model, num_features)
+      
     return essayFeatureVecs
