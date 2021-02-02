@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='AG.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sriracha&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</head>
+<body >
+
+    <div class="header">
+        <div class="inner">
+        <div class="container">
+        <img class="logo " src="{{url_for('static', filename='logo.png')}}" alt="Logo">
+        
+          <nav >
+            <ul class="social-media ">
+                <li><a href="/login" ><i class="fas fa-sign-in-alt" ></i>Login</a></li>
+                <li><a href="/signup" ><i class="fas fa-user"></i>Sign Up</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="p1">
+        <p>Grade your essays in a click !</p>
+        </div>
+        </div>
+    </div>
+    <div class="flex section">
+        <div class="container">
+            <div class="row">
+                        <div class="col-xs-10">
+                            <div class=box>
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }}">
+                                {{ message }}
+                                    </div>
+                                {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+                            </div>
+                        </div>
+                <div class="col-xs-2">
+                  <form class="signup" method="POST" action="/signup">
+                      <h3>SIGN UP</h3>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="name" pattern="^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$" placeholder="Name" required="TRUE">
+                      </div><br>
+                      <div class="form-group">
+                          <input type="email" class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required="TRUE">
+                          
+                      </div><br>
+                      <div class="form-group">
+                          <input type="password" class="form-control" name="password" pattern=".{6,}" placeholder="Password" required="TRUE">
+                          
+                      </div><br>
+                      <div class="form-group">
+                          <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox"> Remember me
+                          </label>
+                      </div>
+                    
+                      
+                      <input type="submit" value="Submit" class="btn btn-primary ">
+                  </form>
+              </div>
+            </div>
+    </div>
+    
+    <div class="footer ">Autograder ©</div> 
+
+</body>
+</html>

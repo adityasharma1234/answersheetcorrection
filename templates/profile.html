@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='profile.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="header">
+        <div class="inner">        
+        <img class="logo " src="{{url_for('static', filename='logo.png')}}" alt="Logo">            
+          <div class = "social-media" >
+            <ul>
+                <li><a href="/home" ><i class="fa fa-home"></i>Home</a></li>
+               <li><a href="/logout" ><i class="fa fa-sign-out-alt"></i>LogOut</a></li>
+            </ul>
+          </div>
+        
+        </div>
+    </div>
+    <div class="info">
+        <img src="{{url_for('static', filename='avatar.png')}}">
+        <h1>{{ name }}</h1>
+        <h3>{{ email }}</h3>
+    </div>
+    <section>
+       
+       
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr>
+                <th>Sr. No</th>
+                <th>Title</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              {% for post in posts %}
+              <tr>
+                <td>{{ post.user_id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.date_posted }}</td>
+                <td>+2.01</td>
+                
+              </tr>          
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      
+</body>
+</html>
