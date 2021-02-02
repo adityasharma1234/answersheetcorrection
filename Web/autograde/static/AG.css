@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Century Gothic;
+}
+.header {
+  background-color: #00665c;
+  color: aliceblue;
+  font-size: 20px;
+  height: 300px;
+}
+.logo {
+  margin-top: 0px;
+  margin-left: -40px;
+  float: left;
+  width: 50%;
+}
+.social-media {
+  padding: auto 25px;
+  float: right;
+  margin-top: 30px;
+}
+p {
+  font-size: 30px;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: space-around;
+  margin-top: -100px;
+}
+
+.inner {
+  position: relative;
+}
+.inner img {
+  width: 200px;
+  height: 180px;
+  position: absolute;
+  top: -50px;
+  left: 40px;
+}
+.cont {
+  margin: 0px 20px;
+  font-size: 18px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+a,
+li {
+  text-decoration: none;
+  background-color: transparent;
+  padding: 0px 10px;
+  font-weight: bolder;
+  color: white !important;
+}
+
+nav,
+ul {
+  /* width: 100%; */
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.p1 {
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-family: "Pacifico", cursive;
+}
+.box {
+  /* margin-left: auto; */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("1.jpeg");
+  width: 550px;
+  height: 400px;
+  animation: animate 20s infinite;
+  box-shadow: 0 4px 8px 0 black;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+@keyframes animate {
+  0% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("1.jpeg");
+  }
+  25% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("1.jpeg");
+  }
+  25.01% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.i6N90a3lvJ1sc37omoPiUQHaFT%26pid%3DApi&f=1");
+  }
+  50% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.i6N90a3lvJ1sc37omoPiUQHaFT%26pid%3DApi&f=1");
+  }
+  50.01% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://img.grouponcdn.com/deal/kuGNuL1ontkh4dCftRqU/qj-1000x600/v1/c700x420.jpg");
+  }
+  75% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://img.grouponcdn.com/deal/kuGNuL1ontkh4dCftRqU/qj-1000x600/v1/c700x420.jpg");
+  }
+  75.01% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Dv683TeIPA9UN-Fb6-dUtwHaD6%26pid%3DApi&f=1");
+  }
+  100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Dv683TeIPA9UN-Fb6-dUtwHaD6%26pid%3DApi&f=1");
+  }
+}
+.footer {
+  width: 100%;
+  height: 30px;
+  background-color: #00665c;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.signup {
+  font-size: 12px;
+}
+@media only screen and (max-width: 786px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .signUpForm {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .p1 {
+    text-align: center;
+  }
+  .box {
+    width: 320px;
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .social-media li,
+  .social-media a {
+    padding: 0px;
+    padding-right: 5px;
+    font-weight: normal;
+    font-size: 18px;
+  }
+  .inner img {
+    /* align-items: center; */
+    width: 150px;
+    height: 166px;
+    margin-top: 10px;
+  }
+}
